@@ -51,11 +51,11 @@
 
         layer0 {
             bindings = <
-&kp CAPS    &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
+&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
 &kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
-&kp ESC     &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
+&kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
 &kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp LSHFT    &kp ENTER        &kp SPACE  &mo 2      &kp MINUS  &kp EQUAL        &kp DELETE
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &sl 1   &sl 3        &kp ENTER        &kp SPACE  &sl 2      &kp MINUS  &kp EQUAL        &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -71,7 +71,7 @@
 &kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
             >;
 
-            display-name = "layer1";
+            display-name = "LAYER1";
             sensor-bindings = <&scroll_encoder>;
         };
 
@@ -84,7 +84,35 @@
 &trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
             >;
 
+            display-name = "LAYER2";
             sensor-bindings = <&scroll_encoder>;
         };
+
+        layer_3 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_UP     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_DOWN   &kp N7  &kp N8  &kp N9  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT   &kp N4  &kp N5  &kp N6  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_RIGHT  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans           &trans  &trans  &trans  &trans  &trans
+            >;
+
+            display-name = "LAYER3";
+            sensor-bindings = <&scroll_encoder>;
+        };
+/*
+        layer_3 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_UP     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_DOWN   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_RIGHT  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans           &trans  &trans  &trans  &trans  &trans
+            >;
+
+            display-name = "LAYER3";
+            sensor-bindings = <&scroll_encoder>;
+        };
+*/
     };
 };
