@@ -22,9 +22,30 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
-
 / {
     behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <27 28 29 30>; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
+        };
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <34 35 36 37>; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
+        };
         mmv {
             acceleration-exponent = <1>;      // 1
             time-to-max-speed-ms = <900>;    // 40
@@ -53,7 +74,7 @@
             bindings = <
 &kp ESC     &kp N1              &kp N2         &kp N3        &kp N4      &kp N5       &kp UP_ARROW     &kp N6     &kp N7      &kp N8         &kp N9           &kp N0             &kp BACKSPACE
 &kp TAB     &kp Q               &kp W          &kp E         &kp R       &kp T        &kp DOWN_ARROW   &kp Y      &kp U       &kp I          &kp O            &kp P              &kp BSLH
-&kp CAPS    &mt LEFT_GUI A      &mt LEFT_ALT S &mt LSHFT D   &mt LCTRL F &kp G        &kp LEFT_ARROW   &kp H      &mt RCTRL J &mt RSHFT K    &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI &kp APOS
+&kp CAPS    &hml LEFT_GUI A      &hml LEFT_ALT S &hml LSHFT D   &hml LCTRL F &kp G        &kp LEFT_ARROW   &kp H      &hmr RCTRL J &hmr RSHFT K    &hmr RIGHT_ALT L  &hmr RIGHT_GUI SEMI &kp APOS
 &kp LSHFT   &kp Z               &kp X          &kp C         &kp V       &kp B        &kp RIGHT_ARROW  &kp N      &kp M       &kp COMMA      &kp DOT          &kp FSLH           &kp ENTER
 &kp C_MUTE  &kp LCTRL           &kp LEFT_GUI   &kp LEFT_ALT  &mo 1       &lt 3 SPACE  &tog 1           &kp SPACE  &mo 2       &kp MINUS      &kp EQUAL        &kp DELETE
             >;
